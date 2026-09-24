@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>From Numbers to Decisions | Project RESOLVE | Syeda Mania Musa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --paper:#F2F4F7;--card:#FFFFFF;--ink:#14283F;--text:#1E2A36;--muted:#5B6775;--line:#D5DCE4;
+ --steel:#2F6A8E;--steel-soft:#E3EEF5;--amber:#A8660F;--sand:#F7ECD9;--breach:#B23A2E;--breach-soft:#F7E3E0;--ok:#2E7D5B;
+ --serif:"Source Serif 4",Georgia,"Times New Roman",serif;--sans:"Source Sans 3","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#0E1824;--card:#15222F;--ink:#E4EBF2;--text:#D6DEE7;--muted:#98A6B5;--line:#2A3A4B;
+ --steel:#72AACD;--steel-soft:#1B3246;--amber:#E2A24C;--sand:#2B2417;--breach:#E8776B;--breach-soft:#3A2020;--ok:#63C197;}}
+:root[data-theme="dark"]{
+ --paper:#0E1824;--card:#15222F;--ink:#E4EBF2;--text:#D6DEE7;--muted:#98A6B5;--line:#2A3A4B;
+ --steel:#72AACD;--steel-soft:#1B3246;--amber:#E2A24C;--sand:#2B2417;--breach:#E8776B;--breach-soft:#3A2020;--ok:#63C197;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{margin:0;background:var(--paper);color:var(--text);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--steel)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.prose{max-width:70ch}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);line-height:1.2;margin:0}
+h2{font-size:clamp(1.7rem,3.2vw,2.3rem);font-weight:700;margin-bottom:.4em}
+h3{font-size:1.3rem;font-weight:600;margin:2.2rem 0 .6rem}
+p{margin:0 0 1em}
+.lede{font-size:1.15rem;color:var(--muted)}
+cite{font-style:normal;color:var(--muted);white-space:nowrap}
+
+/* header */
+header.site{background:var(--ink);color:#fff}
+:root[data-theme="dark"] header.site{background:#0A121B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header.site{background:#0A121B}}
+.site .top{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;padding:28px 0 18px;flex-wrap:wrap}
+.site .title{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#fff;margin:0}
+.site .sub{color:#B9C7D6;margin:4px 0 0;font-size:.98rem}
+.who{color:#B9C7D6;font-size:.92rem;text-align:right}
+.who strong{color:#fff;font-weight:600}
+.badge{display:inline-block;background:var(--amber);color:#fff;border-radius:3px;padding:2px 10px;font-weight:600;font-size:.88rem;margin-top:6px}
+nav.tabs{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin}
+nav.tabs button{flex:0 0 auto;border:0;background:none;font:600 .95rem var(--sans);color:var(--muted);padding:14px 14px 12px;border-bottom:3px solid transparent;cursor:pointer}
+nav.tabs button span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--ink);font-size:.78rem;margin-right:8px}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--amber)}
+nav.tabs button[aria-selected="true"] span{background:var(--amber);color:#fff}
+
+main section.page{display:none;padding:48px 0 32px}
+main section.page.active{display:block}
+.pagehead{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:28px}
+.pnum{font:600 .9rem var(--sans);color:var(--amber)}
+
+/* panels */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px 24px;margin:20px 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.think{background:var(--sand);border-left:5px solid var(--amber);border-radius:0 6px 6px 0;padding:18px 22px;margin:24px 0}
+.think b{display:block;font-family:var(--serif);color:var(--ink);font-size:1.05rem;margin-bottom:4px}
+.think p:last-child{margin:0}
+.ev{display:inline-block;font:700 .75rem var(--sans);color:var(--steel);border:1.5px solid var(--steel);border-radius:3px;padding:0 6px;margin-left:6px;vertical-align:2px}
+
+/* decision chain: signature component */
+.chain{display:grid;grid-template-columns:1fr 1fr 1fr;margin:22px 0;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.chain > div{padding:16px 20px 16px 30px;position:relative;background:var(--card)}
+.chain > div:nth-child(2){background:var(--steel-soft)}
+.chain > div:nth-child(3){background:var(--ink);color:#fff}
+.chain > div:nth-child(3) small{color:#C9D6E3}
+:root[data-theme="dark"] .chain > div:nth-child(3){background:#26435E}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chain > div:nth-child(3){background:#26435E}}
+.chain > div + div::before{content:"";position:absolute;left:-1px;top:50%;width:14px;height:14px;background:inherit;transform:translate(-50%,-50%) rotate(45deg);border-top:1px solid var(--line);border-right:1px solid var(--line)}
+.chain > div:first-child{padding-left:20px}
+.chain small{display:block;font-weight:600;color:var(--muted);font-size:.8rem;margin-bottom:4px}
+.chain strong{font-family:var(--serif);font-size:1.12rem;line-height:1.3;display:block}
+@media (max-width:760px){.chain{grid-template-columns:1fr}.chain > div + div::before{left:50%;top:0;transform:translate(-50%,-50%) rotate(135deg)}.chain > div{padding:18px 20px}}
+
+/* tables */
+.tw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:560px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--ink);color:#fff;font-weight:600}
+:root[data-theme="dark"] th{background:#223548}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) th{background:#223548}}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.src{font-size:.85rem;color:var(--muted);margin:6px 0 0}
+.pill{display:inline-block;border-radius:3px;padding:1px 8px;font-size:.8rem;font-weight:700}
+.pill.bad{background:var(--breach-soft);color:var(--breach)}
+.pill.warn{background:var(--sand);color:var(--amber)}
+.pill.ok{background:var(--steel-soft);color:var(--steel)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;margin-bottom:12px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.question{font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.35rem);line-height:1.22;color:var(--ink);font-weight:600;margin:6px 0 18px}
+.neck{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:center;gap:0}
+.neck ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.neck li{background:var(--steel-soft);border:1px solid var(--line);border-radius:4px;padding:7px 10px;font-size:.88rem;font-weight:600;color:var(--ink)}
+.neck .arrow{height:2px;background:var(--muted);position:relative}
+.neck .arrow::after{content:"";position:absolute;right:-1px;top:-5px;border:6px solid transparent;border-left:9px solid var(--muted);border-right:0}
+.neck .box{border-radius:4px;padding:16px 12px;text-align:center;font-weight:700;font-size:.92rem;color:#fff;line-height:1.3}
+.neck .cap{background:var(--ink)}
+:root[data-theme="dark"] .neck .cap{background:#2A4763}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .neck .cap{background:#2A4763}}
+.neck .commit{background:var(--amber)}
+@media (max-width:520px){.neck{grid-template-columns:1fr;gap:10px}.neck .arrow{height:22px;width:2px;margin:0 auto}.neck .arrow::after{right:-5px;top:auto;bottom:-1px;border:6px solid transparent;border-top:9px solid var(--muted);border-bottom:0}}
+.rule{background:var(--sand);border-radius:6px;padding:16px 20px;margin-top:18px;font-size:.98rem}
+.rule b{color:var(--amber)}
+
+/* figures */
+figure{margin:20px 0}
+figure img{border:1px solid var(--line);border-radius:6px;background:#fff}
+figcaption{font-size:.87rem;color:var(--muted);margin-top:8px}
+details{margin:10px 0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 16px}
+summary{cursor:pointer;font-weight:600;color:var(--steel)}
+details img{margin-top:12px}
+
+/* charts */
+svg text{font-family:var(--sans)}
+.bullet{display:grid;grid-template-columns:190px 1fr 140px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.bullet:last-child{border-bottom:0}
+.bullet .lbl{font-weight:600;color:var(--ink);font-size:.95rem}
+.bullet .lbl small{display:block;font-weight:400;color:var(--muted)}
+.track{position:relative;height:16px;background:var(--steel-soft);border-radius:3px}
+.fill{position:absolute;left:0;top:0;bottom:0;background:var(--breach);border-radius:3px}
+.tick{position:absolute;top:-6px;bottom:-6px;width:3px;background:var(--ink)}
+.bullet .val{font-variant-numeric:tabular-nums;font-size:.92rem}
+.bullet .val b{color:var(--breach)}
+@media (max-width:640px){.bullet{grid-template-columns:1fr}}
+.div{display:grid;grid-template-columns:170px 1fr 70px;gap:12px;align-items:center;padding:9px 0}
+.div .axis{position:relative;height:22px}
+.div .axis::before{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;width:2px;background:var(--muted)}
+.div .bar{position:absolute;top:3px;bottom:3px;border-radius:2px}
+.div .bar.neg{background:var(--breach);right:50%}
+.div .bar.pos{background:var(--amber);left:50%}
+.div .v{font-weight:700;font-variant-numeric:tabular-nums}
+@media (max-width:560px){.div{grid-template-columns:1fr 60px}.div .name{grid-column:1/-1}}
+.stat{border-top:4px solid var(--steel);background:var(--card);border-radius:0 0 6px 6px;padding:14px 18px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat.bad{border-top-color:var(--breach)}
+.stat .big{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--ink);line-height:1.1}
+.stat.bad .big{color:var(--breach)}
+.stat p{margin:.3em 0 0;font-size:.92rem;color:var(--muted)}
+
+/* governance ladder */
+.ladder{display:grid;gap:8px}
+.ladder div{border-radius:4px;padding:10px 14px;color:#fff}
+.ladder div b{display:block}
+.ladder div span{font-size:.88rem;opacity:.9}
+.l1{background:#14283F}.l2{background:#2F6A8E}.l3{background:#3D5470}.l4{background:#6A7584}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.matrix div{border:1px solid var(--line);border-radius:4px;padding:12px 14px;background:var(--card);font-size:.92rem}
+.matrix div b{display:block;color:var(--ink);font-family:var(--serif)}
+.matrix .hi{background:var(--sand)}
+
+/* recommendations */
+ol.recs{list-style:none;counter-reset:r;padding:0;margin:16px 0;display:grid;gap:12px}
+ol.recs li{counter-increment:r;display:grid;grid-template-columns:52px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 18px}
+ol.recs li::before{content:counter(r);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font:700 1.2rem var(--serif)}
+ol.recs b{display:block;color:var(--ink);font-size:1.03rem}
+ol.recs span{color:var(--muted);font-size:.93rem}
+
+.refs p{padding-left:2em;text-indent:-2em;font-size:.93rem;margin:0 0 .7em}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;padding-top:20px;border-top:1px solid var(--line)}
+.pager button{font:600 .95rem var(--sans);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:10px 16px;cursor:pointer}
+.pager button.next{background:var(--ink);color:#fff;border-color:var(--ink)}
+:root[data-theme="dark"] .pager button.next{background:#2A4763}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pager button.next{background:#2A4763}}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.88rem}
+@media (prefers-reduced-motion:no-preference){main section.page.active{animation:in .35s ease-out}@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+@media print{nav.tabs,.pager{display:none}main section.page{display:block!important;page-break-after:always}}
+</style>
+</head>
+<body>
+<header class="site">
+ <div class="wrap top">
+  <div>
+   <p class="title">From Numbers to Decisions</p>
+   <p class="sub">A data informed decision narrative from Project RESOLVE, Mobility Oil and Gas Limited</p>
+  </div>
+  <div class="who"><strong>Syeda Mania Musa</strong><br>MSc Project Management, Ravensbourne University London<br>PRM25706 Assessment 3<br><span class="badge">RALF competency: Critical Thinking</span></div>
+ </div>
+</header>
+
+<nav class="tabs" aria-label="Site pages">
+ <div class="wrap" role="tablist">
+  <button role="tab" data-p="1"><span>1</span>Starting point</button>
+  <button role="tab" data-p="2"><span>2</span>The numbers</button>
+  <button role="tab" data-p="3"><span>3</span>Reading the signals</button>
+  <button role="tab" data-p="4"><span>4</span>The trigger that did not fire</button>
+  <button role="tab" data-p="5"><span>5</span>The Month 14 shock</button>
+  <button role="tab" data-p="6"><span>6</span>Decisions and learning</button>
+ </div>
+</nav>
+
+<main class="wrap">
+
+<!-- PAGE 1 -->
+<section class="page" id="p1" role="tabpanel">
+ <div class="hero">
+  <div>
+   <p class="pnum">Page 1 of 6. Where my thinking started</p>
+   <p class="question">When the Month 12 data arrived, what was it really telling us, and what should governance do about it?</p>
+   <p class="lede">This site follows one competency, critical thinking, through two assessments. In Phase 1 my group designed the strategy for a £100m infrastructure upgrade. In Phase 2 I worked alone and tested that design against real delivery data.</p>
+  </div>
+  <div class="panel" style="margin:0">
+   <h3 style="margin-top:0;font-size:1.05rem">My Phase 1 diagnosis <span class="ev">E1</span></h3>
+   <div class="neck" aria-label="Five constraints feed one bottleneck, which leads to irreversible commitment">
+    <ul><li>Supply chain uncertainty</li><li>Cost pressure and inflation</li><li>Safety and regulatory limits</li><li>Governance and ESG scrutiny</li><li>Location and access logistics</li></ul>
+    <div class="arrow"></div>
+    <div class="box cap">Assurance and approvals capacity</div>
+    <div class="arrow"></div>
+    <div class="box commit">Irreversible commitment</div>
+   </div>
+   <p class="src">Commit early and the uncertainty comes back as change, claims and rework <cite>(Chen, Zhu and Crama, 2023)</cite>. Source: Musa et al. (2026).</p>
+  </div>
+ </div>
+
+ <h3>Why critical thinking, and why here</h3>
+ <div class="prose">
+  <p>Facione <cite>(1990)</cite> describes critical thinking as purposeful, self regulatory judgement that interprets, analyses and evaluates evidence before reaching a conclusion. In project operations, procurement and governance, almost every decision is made from incomplete numbers. Awarding a contract, releasing contingency and escalating an issue all depend on someone reading the data well.</p>
+  <p>Project RESOLVE upgrades the energy logistics and operational infrastructure of Mobility Oil and Gas Limited, to lift reliability, efficiency and resilience while the asset keeps operating <cite>(Mobility Oil and Gas Ltd, 2026)</cite>. It is a 36 month, £100m programme <cite>(Ravensbourne University London, 2026)</cite>.</p>
+ </div>
+
+ <h3>My role in Assessment 1 <span class="ev">E1</span></h3>
+ <div class="prose"><p>In our five person consulting team, I led the context and problem definition. I did not want to list the five constraints from the case pack one by one. I wanted to show where they collide. My answer was that they all press on one bottleneck: the capacity to assure and approve work before it is committed.</p></div>
+ <figure><img src="poster1-team.jpg" alt="Group 4 consulting team panel from Poster 1, listing Syeda Mania Musa for context and problem definition" style="max-width:560px"><figcaption>Figure 1. Team panel from Poster 1 showing my responsibility. Source: Musa et al. (2026).</figcaption></figure>
+ <div class="rule"><b>The rule we recommended.</b> Release a package only when scope, interface ownership and assurance evidence are all stable. Anything short of that, we hold at the gate.</div>
+
+ <h3>Filtering the environment: only forces that change a decision</h3>
+ <div class="prose"><p>Critical thinking began with removing things. A full PESTLE scan produced far more than a poster could hold, so we kept only the six forces that changed a Phase 1 decision.</p></div>
+ <div class="tw"><table>
+  <thead><tr><th>Force</th><th>Evidence</th><th>What we did about it</th></tr></thead>
+  <tbody>
+   <tr><td>Political</td><td>UK production expected to meet only about 40% of oil and gas need by 2028 <cite>(DESNZ, 2025)</cite></td><td>Protect continuity. Reject options that create avoidable downtime.</td></tr>
+   <tr><td>Economic</td><td>Net import dependency of 40.8% in 2023 <cite>(DESNZ, 2024)</cite></td><td>Treat long lead availability as a design constraint.</td></tr>
+   <tr><td>Social</td><td>Safety attitude ranked first by the workforce, weight 0.519 <cite>(Rahim et al., 2024)</cite></td><td>Operations sign off every tie in window.</td></tr>
+   <tr><td>Operational</td><td>Multi supplier environment and long lead items <cite>(Ravensbourne University London, 2026)</cite></td><td>Name an interface owner before any package is released.</td></tr>
+   <tr><td>Legal</td><td>616 non compliance issues across 78 offshore safety cases, and 462 non fatal injuries per 100,000 workers <cite>(HSE, 2024)</cite></td><td>Make compliance evidence a formal procurement gate.</td></tr>
+   <tr><td>Environmental</td><td>UKCS production emissions down 34% between 2018 and 2024 <cite>(NSTA, 2025)</cite></td><td>Screen options against the emissions trajectory.</td></tr>
+  </tbody></table></div>
+ <p class="src">Adapted from Poster 1, Table 1. Source: Musa et al. (2026).</p>
+
+ <figure><img src="poster1-section01.jpg" alt="Section 01 of Poster 1: project context, the five constraints meeting one bottleneck, the core challenge and the recommended rule"><figcaption>Figure 2. My section of Poster 1 as submitted. Source: Musa et al. (2026).</figcaption></figure>
+ <details><summary>View the full Assessment 1 posters</summary>
+  <img src="poster1-full.jpg" alt="Full Poster 1, Project RESOLVE strategic diagnosis" loading="lazy">
+  <img src="poster2-full.jpg" alt="Full Poster 2, procurement, governance and resilience design" loading="lazy">
+ </details>
+
+ <h3>How to read this site</h3>
+ <div class="prose"><p>Every page uses the same chain. I found this the most useful habit I built in this module, so I made it the structure of the site.</p></div>
+ <div class="chain"><div><small>Step one</small><strong>The number</strong>What the data says</div><div><small>Step two</small><strong>What it means</strong>Why it is happening and where</div><div><small>Step three</small><strong>The decision</strong>What governance should do next</div></div>
+ <div class="pager"><span></span><button class="next" data-go="2">Next: The numbers</button></div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="p2" role="tabpanel">
+ <div class="pagehead"><p class="pnum">Page 2 of 6</p><h2>The numbers at Month 12 <span class="ev">E3</span></h2>
+ <p class="lede prose">One third of the way through the programme, the project had earned less value than planned and spent more than it earned.</p></div>
+
+ <div class="grid2">
+  <div class="panel" style="margin:0">
+   <svg viewBox="0 0 440 290" role="img" aria-label="Bar chart. Planned value 32 million pounds, earned value 28 million, actual cost 34 million" style="width:100%;height:auto">
+    <g stroke="var(--line)" stroke-width="1">
+     <line x1="50" y1="250" x2="420" y2="250"/><line x1="50" y1="190" x2="420" y2="190"/><line x1="50" y1="130" x2="420" y2="130"/><line x1="50" y1="70" x2="420" y2="70"/>
+    </g>
+    <g fill="var(--muted)" font-size="12" text-anchor="end"><text x="42" y="254">£0m</text><text x="42" y="194">£10m</text><text x="42" y="134">£20m</text><text x="42" y="74">£30m</text></g>
+    <rect x="75" y="58" width="80" height="192" fill="var(--muted)" rx="2"/>
+    <rect x="195" y="82" width="80" height="168" fill="var(--steel)" rx="2"/>
+    <rect x="315" y="46" width="80" height="204" fill="var(--breach)" rx="2"/>
+    <g font-size="16" font-weight="700" fill="var(--ink)" text-anchor="middle"><text x="115" y="50">£32m</text><text x="235" y="74">£28m</text><text x="355" y="38">£34m</text></g>
+    <g font-size="13" fill="var(--text)" text-anchor="middle"><text x="115" y="272">Planned Value</text><text x="235" y="272">Earned Value</text><text x="355" y="272">Actual Cost</text></g>
+    <g stroke="var(--breach)" stroke-width="2" fill="none"><path d="M280 82 H300 V46 H310"/></g>
+    <text x="287" y="118" font-size="12" font-weight="700" fill="var(--breach)" text-anchor="middle">CV −£6m</text>
+    <g stroke="var(--amber)" stroke-width="2" fill="none"><path d="M160 58 H180 V82 H190"/></g>
+    <text x="170" y="108" font-size="12" font-weight="700" fill="var(--amber)" text-anchor="middle">SV −£4m</text>
+   </svg>
+   <p class="src">Figure 3. Earned value snapshot. Source: my calculations from Ravensbourne University London (2026).</p>
+  </div>
+  <div class="grid2" style="gap:12px;align-content:start">
+   <div class="stat bad"><div class="big">0.82</div><p>Cost Performance Index. About 82p of value earned for every £1 spent.</p></div>
+   <div class="stat bad"><div class="big">0.88</div><p>Schedule Performance Index. 88% of planned progress achieved.</p></div>
+   <div class="stat bad"><div class="big">≈£121m</div><p>Estimate at Completion if current efficiency continues, against a £100m budget.</p></div>
+   <div class="stat"><div class="big">≈1.09</div><p>To Complete Performance Index needed to finish on the original budget.</p></div>
+  </div>
+ </div>
+
+ <h3>How I calculated each metric</h3>
+ <div class="tw"><table>
+  <thead><tr><th>Metric</th><th>Formula</th><th>Value</th><th>What it means in plain words</th></tr></thead>
+  <tbody>
+   <tr><td>Planned Value (PV)</td><td>From data pack</td><td class="num">£32m</td><td>Work we planned to finish by Month 12</td></tr>
+   <tr><td>Earned Value (EV)</td><td>From data pack</td><td class="num">£28m</td><td>Work actually finished</td></tr>
+   <tr><td>Actual Cost (AC)</td><td>From data pack</td><td class="num">£34m</td><td>Money actually spent</td></tr>
+   <tr><td>Schedule Variance</td><td>EV minus PV</td><td class="num">−£4m</td><td>Behind plan</td></tr>
+   <tr><td>Cost Variance</td><td>EV minus AC</td><td class="num">−£6m</td><td>Over cost, about 19% of planned value</td></tr>
+   <tr><td>SPI</td><td>EV ÷ PV</td><td class="num">0.88</td><td>Progress is slower than planned</td></tr>
+   <tr><td>CPI</td><td>EV ÷ AC</td><td class="num">0.82</td><td>Value is leaking on every pound spent</td></tr>
+   <tr><td>EAC</td><td>BAC ÷ CPI</td><td class="num">≈£121m</td><td>Likely final cost</td></tr>
+   <tr><td>VAC</td><td>BAC minus EAC</td><td class="num">≈−£21m</td><td>Likely overrun, about 21%</td></tr>
+   <tr><td>TCPI</td><td>(BAC minus EV) ÷ (BAC minus AC)</td><td class="num">72 ÷ 66 ≈ 1.09</td><td>A harder target than the trend suggests is achievable</td></tr>
+  </tbody></table></div>
+ <p class="src">Source: my calculations from Ravensbourne University London (2026), as presented in Musa (2026), Table 3.</p>
+
+ <h3>Where the budget sits</h3>
+ <div class="tw"><table>
+  <thead><tr><th>Cost area</th><th>Budget</th><th>Share of BAC</th></tr></thead>
+  <tbody><tr><td>Engineering and Design</td><td class="num">£12m</td><td class="num">12%</td></tr><tr><td>Procurement and Contracts</td><td class="num">£28m</td><td class="num">28%</td></tr><tr><td>Construction and Implementation</td><td class="num">£45m</td><td class="num">45%</td></tr><tr><td>Operations Readiness</td><td class="num">£8m</td><td class="num">8%</td></tr><tr><td>Risk and Contingency</td><td class="num">£7m</td><td class="num">7%</td></tr><tr><td><b>Total (BAC)</b></td><td class="num"><b>£100m</b></td><td class="num"><b>100%</b></td></tr></tbody></table></div>
+ <p class="src">Source: Ravensbourne University London (2026); Musa (2026), Table 1.</p>
+
+ <div class="chain"><div><small>The number</small><strong>CPI 0.82, SPI 0.88, EAC ≈£121m</strong></div><div><small>What it means</small><strong>The project is in trouble, but these figures alone do not say why or where</strong></div><div><small>The decision</small><strong>Do not act yet. Find the source first.</strong></div></div>
+ <div class="think"><b>My thinking</b><p>My first instinct was to report these figures and move on. Structured performance review exists to surface problems before they grow, and a TCPI of 1.09 is exactly that kind of warning <cite>(Nalewaik and Mills, 2016)</cite>. But lagging indices only describe the damage. To decide anything, I needed to know where the value was leaking. That is the next page.</p></div>
+ <div class="pager"><button data-go="1">Back: Starting point</button><button class="next" data-go="3">Next: Reading the signals</button></div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="p3" role="tabpanel">
+ <div class="pagehead"><p class="pnum">Page 3 of 6</p><h2>Reading the signals together <span class="ev">E4</span></h2>
+ <p class="lede prose">Cost and schedule indices are lagging indicators. They report what has already happened. I read them beside the leading operational KPIs to find the source <cite>(Bang, 2023)</cite>.</p></div>
+
+ <div class="panel">
+  <h3 style="margin-top:0">KPI dashboard at Month 12</h3>
+  <p class="src" style="margin-bottom:8px">Dark tick marks the target. Red bar shows the current value.</p>
+  <div class="bullet"><div class="lbl">CPI<small>Target 1.0 or above</small></div><div class="track"><div class="fill" style="width:68.3%"></div><div class="tick" style="left:83.3%"></div></div><div class="val"><b>0.82</b> below target</div></div>
+  <div class="bullet"><div class="lbl">SPI<small>Target 1.0 or above</small></div><div class="track"><div class="fill" style="width:73.3%"></div><div class="tick" style="left:83.3%"></div></div><div class="val"><b>0.88</b> below target</div></div>
+  <div class="bullet"><div class="lbl">Supplier on time delivery<small>Target 95% or above</small></div><div class="track"><div class="fill" style="width:82%"></div><div class="tick" style="left:95%"></div></div><div class="val"><b>82%</b> down from 95%</div></div>
+  <div class="bullet"><div class="lbl">Procurement cycle time<small>Target 10 weeks or less</small></div><div class="track"><div class="fill" style="width:81.25%"></div><div class="tick" style="left:62.5%"></div></div><div class="val"><b>13 weeks</b> over target</div></div>
+  <div class="bullet"><div class="lbl">Safety incidents<small>Target zero</small></div><div class="track"><div class="fill" style="width:33%"></div><div class="tick" style="left:0"></div></div><div class="val"><b>1 minor</b> incident</div></div>
+  <p class="src">Figure 4. Source: Ravensbourne University London (2026); Musa (2026), Table 4.</p>
+ </div>
+
+ <div class="prose"><p>The two leading indicators that had moved furthest both sit inside Work Package 2, Procurement and Supplier Mobilisation. So the slippage is not a general failure of execution. It is a procurement and interface failure.</p></div>
+
+ <h3>Why the timing made it worse</h3>
+ <div class="panel">
+  <svg viewBox="0 0 720 170" role="img" aria-label="Timeline. Work Package 2 runs Months 6 to 14. Work Package 3 runs Months 10 to 30. They overlap from Month 10 to 14. Month 12 is now. Month 14 is the supplier shock." style="width:100%;height:auto">
+   <rect x="173" y="30" width="80" height="112" fill="var(--sand)"/>
+   <text x="213" y="22" font-size="12" fill="var(--amber)" font-weight="700" text-anchor="middle">Overlap</text>
+   <rect x="113" y="50" width="160" height="30" rx="3" fill="var(--steel)"/><text x="121" y="70" font-size="13" fill="#fff" font-weight="600">WP2 Procurement</text>
+   <rect x="173" y="94" width="400" height="30" rx="3" fill="var(--ink)"/><text x="181" y="114" font-size="13" fill="var(--paper)" font-weight="600">WP3 Construction and Installation</text>
+   <line x1="213" y1="36" x2="213" y2="142" stroke="var(--breach)" stroke-width="2" stroke-dasharray="4 3"/>
+   <line x1="253" y1="36" x2="253" y2="142" stroke="var(--breach)" stroke-width="2"/>
+   <g font-size="12" fill="var(--muted)" text-anchor="middle"><text x="13" y="162">M0</text><text x="113" y="162">M6</text><text x="173" y="162">M10</text><text x="213" y="162">M12 now</text><text x="265" y="162">M14 shock</text><text x="573" y="162">M30</text><text x="700" y="162">M36</text></g>
+   <line x1="13" y1="146" x2="713" y2="146" stroke="var(--line)"/>
+  </svg>
+  <p class="src">Figure 5. Work package timing, drawn by me from Ravensbourne University London (2026).</p>
+ </div>
+ <div class="prose"><p>Work Package 2 overlaps Work Package 3 by design. Packages were being priced and mobilised while interfaces were still moving. Our Phase 1 register had already named this as a critical schedule risk. At Month 12 it was happening.</p></div>
+
+ <h3>Resource utilisation: capacity in the wrong places</h3>
+ <div class="panel">
+  <div class="div"><span class="name">Project Engineers<br><small class="src">18 planned, 15 actual</small></span><div class="axis"><div class="bar neg" style="width:17%"></div></div><span class="v" style="color:var(--breach)">−17%</span></div>
+  <div class="div"><span class="name">Procurement Specialists<br><small class="src">10 planned, 12 actual</small></span><div class="axis"><div class="bar pos" style="width:20%"></div></div><span class="v" style="color:var(--amber)">+20%</span></div>
+  <div class="div"><span class="name">Site Supervisors<br><small class="src">14 planned, 11 actual</small></span><div class="axis"><div class="bar neg" style="width:21%"></div></div><span class="v" style="color:var(--breach)">−21%</span></div>
+  <div class="div"><span class="name">Contractors<br><small class="src">120 planned, 135 actual</small></span><div class="axis"><div class="bar pos" style="width:12.5%"></div></div><span class="v" style="color:var(--amber)">+12.5%</span></div>
+  <p class="src">Figure 6. Variance from plan. Source: Ravensbourne University London (2026); Musa (2026), Table 2.</p>
+ </div>
+ <div class="grid2">
+  <div class="stat"><div class="big">8.6</div><p>Contractors per supervisor in the plan (120 ÷ 14).</p></div>
+  <div class="stat bad"><div class="big">12.3</div><p>Contractors per supervisor now (135 ÷ 11). The span of control has widened by about 43%. My calculation.</p></div>
+ </div>
+ <div class="prose" style="margin-top:18px">
+  <p>Design capacity is thin while procurement effort has grown. Packages keep recycling through procurement because scope was not stable when released, and under schedule pressure the boundaries between technical and commercial roles drift <cite>(Korotkova, Austin and Hetemi, 2024)</cite>. Supervision has thinned at the same moment a safety incident appeared, in a workforce that ranks safety attitude as its first priority <cite>(Rahim et al., 2024; HSE, 2024)</cite>.</p>
+  <p>Through a Lean lens I found two wastes. The first is rework. Packages entering procurement before interfaces mature generate rework, which can absorb 20% or more of cost on affected projects <cite>(Chen, Zhu and Crama, 2023)</cite>. The second is a constraint. Adding contractors will not cure a supervision shortage. It will only move the bottleneck.</p>
+ </div>
+
+ <h3>My decision chain</h3>
+ <div class="tw"><table>
+  <thead><tr><th>The number</th><th>What it means</th><th>The decision</th></tr></thead>
+  <tbody>
+   <tr><td>CPI 0.82, SPI 0.88 (lagging)</td><td>Value is leaking and progress is slow</td><td>Find the source before cutting anything</td></tr>
+   <tr><td>Supplier on time delivery 82%, target 95% (leading)</td><td>The problem sits in Work Package 2</td><td>Qualify suppliers on disruption history</td></tr>
+   <tr><td>Procurement cycle time 13 weeks, target 10 (leading)</td><td>Packages recycle because scope is unstable</td><td>Enforce the interface maturity gate</td></tr>
+   <tr><td>Engineers −17%, procurement staff +20%</td><td>Design capacity is thin and rework is growing</td><td>Resequence, do not add resource everywhere</td></tr>
+   <tr><td>Supervisors −21%, one safety incident</td><td>Activity is running ahead of supervision</td><td>Restore supervision before construction intensity rises</td></tr>
+  </tbody></table></div>
+ <div class="think"><b>My thinking</b><p>The easy answer to a CPI of 0.82 is a cost cut across the board. That would have hit packages that were not causing the problem. The better answer is to resequence procurement behind a firmer interface gate, which matches the procurement strategy we designed in Phase 1 <cite>(Theron and Dowden, 2017)</cite> and the principle of getting scope right first time <cite>(Sammons, 2021)</cite>.</p></div>
+ <div class="pager"><button data-go="2">Back: The numbers</button><button class="next" data-go="4">Next: The trigger that did not fire</button></div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="p4" role="tabpanel">
+ <div class="pagehead"><p class="pnum">Page 4 of 6</p><h2>The trigger that did not fire <span class="ev">E5</span></h2>
+ <p class="lede prose">This page holds the finding I am most proud of, and the one that was hardest to write, because it questions the design my own group created.</p></div>
+
+ <h3>What we designed in Phase 1 <span class="ev">E2</span></h3>
+ <div class="grid2">
+  <div class="panel" style="margin:0">
+   <h3 style="margin-top:0;font-size:1.05rem">Who decides what</h3>
+   <div class="ladder">
+    <div class="l1"><b>Project Board</b><span>Investment decisions and change beyond tolerance</span></div>
+    <div class="l2"><b>Independent Assurance</b><span>Readiness challenge and gate recommendation, outside the delivery line</span></div>
+    <div class="l3"><b>Project Director and PMO</b><span>Integration, schedule and risk. Holds contingency and float</span></div>
+    <div class="l4"><b>Workstream Leads</b><span>Engineering, procurement, operations, ESG. Stop work authority</span></div>
+   </div>
+   <p class="src">Governance structures strengthen resilience <cite>(Yang et al., 2023)</cite>. Source: Musa et al. (2026), Figure 3.</p>
+  </div>
+  <div class="panel" style="margin:0">
+   <h3 style="margin-top:0;font-size:1.05rem">Stakeholder position set the decision rights</h3>
+   <div class="matrix">
+    <div class="hi"><b>Keep satisfied</b>Investors and JV interests. Report by exception against tolerance <cite>(Budiman et al., 2023)</cite>.</div>
+    <div class="hi"><b>Manage closely</b>Board and regulators. Write gate authority and tolerances into the Board terms of reference <cite>(Bourne, Bosch-Rekveldt and Pesamaa, 2023)</cite>.</div>
+    <div><b>Monitor and qualify</b>Suppliers and communities. Qualify on disruption history <cite>(Burkhart and Bode, 2024)</cite>.</div>
+    <div><b>Keep informed</b>Operations and workforce. Safety concerns stop work <cite>(Rahim et al., 2024)</cite>.</div>
+   </div>
+   <p class="src">Power and interest mapping after Mendelow <cite>(1981)</cite>. Source: Musa et al. (2026), Figure 2.</p>
+  </div>
+ </div>
+
+ <h3>Contract firmness follows scope certainty</h3>
+ <div class="tw"><table>
+  <thead><tr><th>Package type</th><th>Contract approach</th><th>Who holds the risk</th><th>Evidence</th></tr></thead>
+  <tbody>
+   <tr><td>Defined, stable scope</td><td>Competitive lump sum after the assurance gate</td><td>Mobility: scope and approval. Supplier: execution and delivery</td><td><cite>Chen, Zhu and Crama (2023)</cite></td></tr>
+   <tr><td>Uncertain interfaces, ageing assets</td><td>Target cost or collaborative mechanism until definition matures</td><td>Shared</td><td><cite>Chen, Zhu and Crama (2023)</cite></td></tr>
+   <tr><td>Critical long lead package</td><td>Early market engagement with gated commitment</td><td>Mobility: specification. Supplier: production and delivery</td><td><cite>Burkhart and Bode (2024)</cite></td></tr>
+  </tbody></table></div>
+ <p class="src">We allocated risk by control and capability, not bargaining power <cite>(Nur, Burton and Bergmann, 2023)</cite>. Source: Musa et al. (2026), Table 2.</p>
+
+ <figure><img src="poster2-section05.jpg" alt="Poster 2 Section 05: governance ladder, risk matrix and risk register with owners and triggers" loading="lazy"><figcaption>Figure 7. Poster 2, Section 05 as submitted, with an owner and a written trigger for every risk. Contingency was held centrally and released at gates <cite>(Kay, 2018)</cite>. Source: Musa et al. (2026).</figcaption></figure>
+
+ <h3>What I found at Month 12</h3>
+ <div class="grid3">
+  <div class="stat bad"><div class="big">≈19%</div><p>Cost variance as a share of planned value (£6m ÷ £32m).</p></div>
+  <div class="stat"><div class="big">±8%</div><p>Cost tolerance that should trigger escalation to the Steering Committee.</p></div>
+  <div class="stat bad"><div class="big">None</div><p>No sign in the data pack that the Steering Committee had been engaged.</p></div>
+ </div>
+ <div class="tw"><table>
+  <thead><tr><th></th><th>Designed in Phase 1</th><th>Found at Month 12</th></tr></thead>
+  <tbody>
+   <tr><td><b>Escalation</b></td><td>Written triggers and clear decision rights</td><td>Tolerance breached more than twice over, no escalation visible <span class="pill bad">Gap</span></td></tr>
+   <tr><td><b>Contingency</b></td><td>£7m held centrally, released at gates</td><td>Contingency exists, but its trigger discipline has not fired <span class="pill bad">Gap</span></td></tr>
+   <tr><td><b>Reporting</b></td><td>Assurance at gates</td><td>Calendar led rather than threshold led <span class="pill warn">Weak</span></td></tr>
+   <tr><td><b>Structure</b></td><td>Four tier governance with independent assurance</td><td>Still structurally sound <span class="pill ok">Holds</span></td></tr>
+  </tbody></table></div>
+ <p class="src">Source: Musa et al. (2026); Ravensbourne University London (2026); Musa (2026), Risk and Governance sections.</p>
+
+ <h3>Our Phase 1 risks, now live</h3>
+ <div class="tw"><table>
+  <thead><tr><th>Phase 1 risk (our register)</th><th>Phase 1 rating</th><th>Phase 2 register</th><th>Month 12 evidence</th></tr></thead>
+  <tbody>
+   <tr><td>Supply chain disruption</td><td><span class="pill bad">Critical 20</span></td><td>R1 Supplier delivery delay, High and High</td><td>On time delivery 82%. Early disruption predicts worse later delivery <cite>(Burkhart and Bode, 2024)</cite></td></tr>
+   <tr><td>Schedule pressure from unresolved interfaces</td><td><span class="pill bad">Critical 16</span></td><td>Seen in WP2 and WP3 overlap</td><td>Cycle time 13 weeks</td></tr>
+   <tr><td>Cost escalation</td><td><span class="pill warn">Medium 9</span></td><td>R2 Cost escalation, Medium and High</td><td>CPI 0.82. Impact rose above our estimate</td></tr>
+   <tr><td>Regulatory approval delay</td><td><span class="pill warn">High 12</span></td><td>R3 Regulatory delay, Low and Medium</td><td>Not yet material</td></tr>
+   <tr><td>Not one of the pack's Phase 1 categories</td><td>Not rated</td><td>R4 Skilled labour shortages, Medium and Medium</td><td>Engineers −17%, supervisors −21%</td></tr>
+  </tbody></table></div>
+ <p class="src">Source: Musa et al. (2026), Table 3; Ravensbourne University London (2026); Musa (2026), Table 5.</p>
+
+ <h3>The system behind it</h3>
+ <div class="grid2">
+  <div class="panel" style="margin:0">
+   <svg viewBox="0 0 360 200" role="img" aria-label="Reinforcing loop: commit early, risk rises, governance load rises, decisions slow" style="width:100%;height:auto">
+    <circle cx="180" cy="100" r="58" fill="none" stroke="var(--breach)" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="180" y="108" text-anchor="middle" font-size="26" font-weight="700" fill="var(--breach)">R</text>
+    <g font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle"><text x="180" y="30">Commit early</text><text x="246" y="104" text-anchor="start">Risk rises</text><text x="180" y="184">Governance load rises</text><text x="114" y="104" text-anchor="end">Decisions slow</text></g>
+   </svg>
+   <p class="src">Reinforcing loop from our Phase 1 design. At Month 12 it was running: packages entered construction before interfaces were owned.</p>
+  </div>
+  <div class="panel" style="margin:0">
+   <svg viewBox="0 0 360 200" role="img" aria-label="Balancing loop: assurance improves definition, change falls, assurance capacity freed for the next gate" style="width:100%;height:auto">
+    <circle cx="180" cy="100" r="58" fill="none" stroke="var(--steel)" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="180" y="108" text-anchor="middle" font-size="26" font-weight="700" fill="var(--steel)">B</text>
+    <g font-size="12" font-weight="600" fill="var(--ink)" text-anchor="middle"><text x="180" y="30">Assurance improves definition</text><text x="246" y="104" text-anchor="start">Change falls</text><text x="180" y="184">Capacity freed</text><text x="114" y="104" text-anchor="end">Next gate</text></g>
+   </svg>
+   <p class="src">Balancing loop. It now needs active reinforcement: resource assurance ahead of the WP3 to WP4 transition.</p>
+  </div>
+ </div>
+ <div class="prose" style="margin-top:16px"><p>Optimising procurement speed without considering construction readiness is a classic subsystem trap <cite>(Bititci and Spanellis, 2023)</cite>. Governance and goals drift apart when reporting follows the calendar rather than the exception <cite>(Bourne, Bosch-Rekveldt and Pesamaa, 2023)</cite>, and managerial discretion within the structure is linked to project success in this sector <cite>(Budiman et al., 2023)</cite>.</p></div>
+ <figure><img src="poster2-systems.jpg" alt="Poster 2 Figure 5: interdependencies drawn as a system with reinforcing and balancing loops" loading="lazy" style="max-width:760px"><figcaption>Figure 8. Our original systems view from Poster 2. Source: Musa et al. (2026).</figcaption></figure>
+
+ <div class="chain"><div><small>The number</small><strong>Cost variance ≈19% against a ±8% tolerance</strong></div><div><small>What it means</small><strong>The design exists, but it is not being used</strong></div><div><small>The decision</small><strong>Escalate now and make reporting event triggered</strong></div></div>
+ <div class="think"><b>My thinking</b><p>The contingency existed. The trigger did not fire. Critiquing our own design felt uncomfortable, but it was the most honest conclusion I reached. Effective governance gives an organisation the capacity to decide and act, not a larger volume of reports <cite>(Yang et al., 2023)</cite>. I also noticed a gap in our own register: skilled labour was not among the pack's Phase 1 categories, so we never rated it. In future I will test a register for what it misses, not only rank what it lists.</p></div>
+ <div class="pager"><button data-go="3">Back: Reading the signals</button><button class="next" data-go="5">Next: The Month 14 shock</button></div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="p5" role="tabpanel">
+ <div class="pagehead"><p class="pnum">Page 5 of 6</p><h2>The Month 14 shock <span class="ev">E6</span></h2>
+ <p class="lede prose">A critical supplier fell into financial distress. I tested each impact against the thresholds and decision rights, one at a time.</p></div>
+
+ <div class="grid3">
+  <div class="stat bad"><div class="big">+8 weeks</div><p>Delay on key components. The schedule trigger is 6 weeks.</p></div>
+  <div class="stat bad"><div class="big">≈£1.68m</div><p>Cost premium of up to 6% on the £28m package. The Project Manager's authority is £1m.</p></div>
+  <div class="stat bad"><div class="big">Review</div><p>A change in supplier origin triggers a revised compliance review.</p></div>
+ </div>
+
+ <div class="tw"><table>
+  <thead><tr><th>Impact</th><th>Effect</th><th>Threshold status</th><th>Escalation route</th></tr></thead>
+  <tbody>
+   <tr><td>Schedule</td><td>+8 weeks on key components</td><td><span class="pill bad">Exceeds 6 week trigger</span></td><td>Steering Committee</td></tr>
+   <tr><td>Cost</td><td>≈£1.68m premium (6% of £28m)</td><td><span class="pill bad">Exceeds £1m PM authority</span></td><td>Steering Committee</td></tr>
+   <tr><td>Compliance</td><td>Revised regulatory review</td><td><span class="pill warn">Regulatory matter</span></td><td>Compliance Board</td></tr>
+  </tbody></table></div>
+ <p class="src">Source: my analysis of the mid project shock scenario in Ravensbourne University London (2026); Musa (2026), Table 6.</p>
+
+ <h3>Parallel, not in sequence</h3>
+ <div class="panel">
+  <svg viewBox="0 0 700 220" role="img" aria-label="The supplier shock produces schedule, cost and compliance impacts. Schedule and cost go to the Steering Committee, compliance goes to the Compliance Board, both at the same time." style="width:100%;height:auto">
+   <rect x="10" y="85" width="150" height="50" rx="4" fill="var(--breach)"/><text x="85" y="115" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Supplier failure</text>
+   <g fill="var(--card)" stroke="var(--line)"><rect x="250" y="20" width="160" height="44" rx="4"/><rect x="250" y="88" width="160" height="44" rx="4"/><rect x="250" y="156" width="160" height="44" rx="4"/></g>
+   <g font-size="13" font-weight="600" fill="var(--ink)" text-anchor="middle"><text x="330" y="47">Schedule +8 weeks</text><text x="330" y="115">Cost ≈£1.68m</text><text x="330" y="183">Compliance review</text></g>
+   <g stroke="var(--muted)" stroke-width="2" fill="none"><path d="M160 110 C205 110 205 42 250 42"/><path d="M160 110 H250"/><path d="M160 110 C205 110 205 178 250 178"/><path d="M410 42 C450 42 450 76 500 76"/><path d="M410 110 C450 110 450 76 500 76"/><path d="M410 178 H500"/></g>
+   <rect x="500" y="52" width="190" height="48" rx="4" fill="var(--ink)"/><text x="595" y="81" text-anchor="middle" fill="var(--paper)" font-size="14" font-weight="700">Steering Committee</text>
+   <rect x="500" y="154" width="190" height="48" rx="4" fill="var(--steel)"/><text x="595" y="183" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Compliance Board</text>
+   <text x="595" y="130" text-anchor="middle" font-size="12" font-weight="700" fill="var(--amber)">Same week, in parallel</text>
+  </svg>
+  <p class="src">Figure 9. Escalation routing, drawn by me.</p>
+ </div>
+
+ <div class="prose">
+  <p>Risk allocation logic for infrastructure under comparable pressure holds that exposure should sit with whoever can influence the outcome <cite>(Nur, Burton and Bergmann, 2023)</cite>. Here that is Mobility, not the failed supplier. That supports releasing contingency in proportion to the £1.68m exposure, which is exactly what the central £7m contingency was designed for <cite>(Kay, 2018)</cite>. Because frequent and longer disruptions early in a project are linked to worse delivery later <cite>(Burkhart and Bode, 2024)</cite>, dual sourcing should start now rather than after a second event.</p>
+ </div>
+ <div class="chain"><div><small>The number</small><strong>8 weeks against 6. £1.68m against £1m.</strong></div><div><small>What it means</small><strong>Two thresholds and a compliance matter are breached at once</strong></div><div><small>The decision</small><strong>Escalate to both bodies in parallel and activate dual sourcing</strong></div></div>
+ <div class="think"><b>My thinking</b><p>Escalating to one body and then the other feels orderly, but it would add weeks to a delay that is already over its limit. Thinking in thresholds rather than in habits made the answer clear.</p></div>
+ <div class="pager"><button data-go="4">Back: The trigger that did not fire</button><button class="next" data-go="6">Next: Decisions and learning</button></div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page" id="p6" role="tabpanel">
+ <div class="pagehead"><p class="pnum">Page 6 of 6</p><h2>Decisions and what I learned</h2>
+ <p class="lede prose">Five actions follow from the chain above, in priority order <cite>(Musa, 2026)</cite>.</p></div>
+
+ <ol class="recs">
+  <li><div><b>Enforce the interface maturity gate before more WP3 packages are priced</b><span>Addresses rework, schedule variance and procurement cycle time <cite>(Chen, Zhu and Crama, 2023)</cite></span></div></li>
+  <li><div><b>Activate dual sourcing on the critical long lead package now</b><span>Addresses R1 and the Month 14 shock <cite>(Burkhart and Bode, 2024)</cite></span></div></li>
+  <li><div><b>Restore site supervision to the planned 14</b><span>Addresses the safety incident and span of control, even if contractor numbers fall <cite>(Rahim et al., 2024)</cite></span></div></li>
+  <li><div><b>Escalate to the Steering Committee and Compliance Board in parallel</b><span>Addresses the governance gap and the shock response</span></div></li>
+  <li><div><b>Move to event triggered assurance reporting</b><span>A threshold breach starts escalation in the same week <cite>(Bourne, Bosch-Rekveldt and Pesamaa, 2023)</cite></span></div></li>
+ </ol>
+ <div class="grid2">
+  <div class="stat"><div class="big">£100m</div><p>Baseline kept within reach if the five actions are taken together and now.</p></div>
+  <div class="stat bad"><div class="big">≈£121m</div><p>Likely outcome if nothing changes, with the shock compounding into the WP3 to WP4 transition.</p></div>
+ </div>
+
+ <h3>What I learned</h3>
+ <div class="grid3">
+  <div class="panel" style="margin:0"><b style="font-family:var(--serif);color:var(--ink)">Slow down before judging</b><p style="margin-top:6px">Fast, intuitive judgement feels complete even when it is not <cite>(Kahneman, 2011)</cite>. I now read lagging indicators beside leading ones before I conclude anything.</p></div>
+  <div class="panel" style="margin:0"><b style="font-family:var(--serif);color:var(--ink)">Test that controls fire</b><p style="margin-top:6px">A control that exists on paper is not the same as a control that works. I will check whether triggers actually fire, including in designs I helped create.</p></div>
+  <div class="panel" style="margin:0"><b style="font-family:var(--serif);color:var(--ink)">Build every argument as a chain</b><p style="margin-top:6px">Number, meaning, decision. Looking back on my work this way is reflection on action <cite>(Schön, 1983)</cite>, and it gives me a method I can repeat.</p></div>
+ </div>
+
+ <h3>How feedback changed my work <span class="ev">E9</span></h3>
+ <div class="prose"><p>Tutor feedback on my Assessment 2 drafts asked me to apply frameworks more specifically and to close my causal loops. I rebuilt sections so that every finding links back to a cause and forward to a decision. That is why every page here ends with a decision chain.</p></div>
+
+ <h3>How I used AI <span class="ev">E7</span></h3>
+ <div class="tw"><table>
+  <thead><tr><th>What I asked AI to do</th><th>What I did before using it</th></tr></thead>
+  <tbody>
+   <tr><td>Help structure my Assessment 2 report</td><td>Removed anything not supported by the data pack and rewrote in my own words</td></tr>
+   <tr><td>Check SV, CV, SPI, CPI, EAC, VAC and TCPI</td><td>Checked every formula against PV £32m, EV £28m, AC £34m and BAC £100m</td></tr>
+   <tr><td>Improve the clarity of recommendations</td><td>Kept the evidence and sources unchanged. The judgements are mine</td></tr>
+  </tbody></table></div>
+ <p class="src">Summarised from my signed AI declaration for Assessment 2 <cite>(Musa, 2026)</cite>. AI tools were also used in preparing this site and are declared in my Assessment 3 submission. For me, AI is a second pair of eyes, not the decision maker.</p>
+
+ <h3>Evidence index</h3>
+ <div class="tw"><table>
+  <thead><tr><th>Ref</th><th>Evidence</th><th>Where on this site</th></tr></thead>
+  <tbody>
+   <tr><td>E1</td><td>My role and problem definition in Assessment 1</td><td><a href="#p1" data-go="1">Page 1</a></td></tr>
+   <tr><td>E2</td><td>Phase 1 governance, contract strategy, risk register and systems loops</td><td><a href="#p4" data-go="4">Page 4</a></td></tr>
+   <tr><td>E3</td><td>Earned value calculations and chart</td><td><a href="#p2" data-go="2">Page 2</a></td></tr>
+   <tr><td>E4</td><td>Lagging and leading indicators read together</td><td><a href="#p3" data-go="3">Page 3</a></td></tr>
+   <tr><td>E5</td><td>Phase 1 design tested against Month 12</td><td><a href="#p4" data-go="4">Page 4</a></td></tr>
+   <tr><td>E6</td><td>Month 14 escalation route</td><td><a href="#p5" data-go="5">Page 5</a></td></tr>
+   <tr><td>E7</td><td>AI use and verification record</td><td>This page</td></tr>
+   <tr><td>E8</td><td>This site as the artefact</td><td>All pages</td></tr>
+   <tr><td>E9</td><td>How feedback changed my work</td><td>This page</td></tr>
+  </tbody></table></div>
+
+ <h3 id="refs">References</h3>
+ <div class="refs">
+  <p>Bang, C.G. (2023) <i>Data-Driven Decision-Making for Business</i>. Cham: Springer.</p>
+  <p>Bititci, U.S. and Spanellis, A. (2023) <i>Systems Thinking for Business and Management: Principles and Practice</i>. Cham: Springer.</p>
+  <p>Bourne, M., Bosch-Rekveldt, M. and Pesamaa, O. (2023) 'Moving goals and governance in megaprojects', <i>International Journal of Project Management</i>, 41(5), 102486.</p>
+  <p>Budiman, M.A., Soetjipto, B.W., Kusumastuti, R.D. and Wijanto, S. (2023) 'Organizational agility, dynamic managerial capability, stakeholder management, discretion, and project success: evidence from the upstream oil and gas sectors', <i>Heliyon</i>, 9(9), e19198.</p>
+  <p>Burkhart, D. and Bode, C. (2024) 'On supplier resilience: how supplier performance, disruption frequency, and disruption duration are interrelated', <i>Journal of Purchasing and Supply Management</i>, 30(3), 100921.</p>
+  <p>Chen, Z., Zhu, W. and Crama, P. (2023) 'Subcontracting and rework cost sharing in engineering, procurement and construction projects', <i>International Journal of Production Economics</i>, 262, 108901.</p>
+  <p>Department for Energy Security and Net Zero (DESNZ) (2024) <i>Digest of United Kingdom Energy Statistics 2024</i>. London: DESNZ. Available at: https://assets.publishing.service.gov.uk/media/66a7e14da3c2a28abb50d922/DUKES_2024_Chapters_1-7.pdf (Accessed: 27 August 2026).</p>
+  <p>Department for Energy Security and Net Zero (DESNZ) (2025) <i>Statutory Security of Supply Report 2025</i>. London: DESNZ. Available at: https://www.gov.uk/government/publications/statutory-security-of-supply-report-2025 (Accessed: 27 August 2026).</p>
+  <p>Facione, P.A. (1990) <i>Critical Thinking: A Statement of Expert Consensus for Purposes of Educational Assessment and Instruction</i>. Millbrae, CA: The California Academic Press.</p>
+  <p>Health and Safety Executive (HSE) (2024) <i>Offshore Statistics and Regulatory Activity Report 2024</i>. Bootle: HSE. Available at: https://www.hse.gov.uk/offshore/assets/docs/hsr2024.pdf (Accessed: 27 August 2026).</p>
+  <p>Kahneman, D. (2011) <i>Thinking, Fast and Slow</i>. London: Allen Lane.</p>
+  <p>Kay, L. (2018) <i>Collaborative Risk Mitigation Through Construction Planning and Scheduling</i>. Bingley: Emerald Group Publishing.</p>
+  <p>Korotkova, N., Austin, J.R. and Hetemi, E. (2024) 'Do you know your people? Situated expertise and permeable expertise boundaries in complex project work', <i>International Journal of Project Management</i>, 42(3), 102588.</p>
+  <p>Mendelow, A. (1981) 'Environmental scanning: the impact of the stakeholder concept', <i>Proceedings of the Second International Conference on Information Systems</i>. Cambridge, MA, pp. 407 to 417.</p>
+  <p>Mobility Oil and Gas Ltd (2026) <i>Oil and Gas Consultancy, Training and Technical Services</i>. Available at: https://www.mobilityoilandgas.com/ (Accessed: 27 August 2026).</p>
+  <p>Musa, S.M. (2026) <i>Project RESOLVE Phase 2: Operational Delivery and Performance</i>. Individual consultancy report, PRM25706 Assessment 2. Unpublished. Ravensbourne University London.</p>
+  <p>Musa, S.M., Minhas, A., Dave, K., Daiyli, S. and Mistri, A. (2026) <i>Project RESOLVE Posters 1 and 2: Strategic Design, Procurement and Governance</i>. PRM25706 Assessment 1. Unpublished. Ravensbourne University London.</p>
+  <p>Nalewaik, A. and Mills, A. (2016) <i>Project Performance Review</i>. Boca Raton: CRC Press.</p>
+  <p>North Sea Transition Authority (NSTA) (2025) <i>NSTA Annual Report and Accounts 2024 to 25</i>. London: NSTA. Available at: https://www.gov.uk (Accessed: 27 August 2026).</p>
+  <p>Nur, S., Burton, B. and Bergmann, A. (2023) 'Evidence on optimal risk allocation models for Indonesian geothermal projects under PPP contracts', <i>Utilities Policy</i>, 81, 101511.</p>
+  <p>Rahim, H., Dapari, R., Che Dom, N., Kamarudin, N. and Ismail, W. (2024) 'Decoding stakeholder priorities of safety culture preferences in the oil and gas industry', <i>Scientific Reports</i>, 14, 20735.</p>
+  <p>Ravensbourne University London (2026) <i>PRM25706 Project RESOLVE Phase 1 and Phase 2 Data Packs</i>. Unpublished module material. Ravensbourne University London.</p>
+  <p>Sammons, P. (2021) <i>Right First Time: Buying and Integrating Advanced Technology for Project Success</i>. Ely: IT Governance Publishing.</p>
+  <p>Schön, D.A. (1983) <i>The Reflective Practitioner: How Professionals Think in Action</i>. New York: Basic Books.</p>
+  <p>Theron, C. and Dowden, M. (2017) <i>Strategic Sustainable Procurement</i>. Abingdon: Routledge.</p>
+  <p>Yang, D., He, Q., Cui, Q. and Hsu, S. (2023) 'Resource and cognitive perspectives: unravelling the influence mechanism of project governance on organizational resilience in infrastructure projects', <i>Buildings</i>, 13(11), 2878.</p>
+ </div>
+ <div class="pager"><button data-go="5">Back: The Month 14 shock</button><button class="next" data-go="1">Back to the start</button></div>
+</section>
+</main>
+
+<footer><div class="wrap">Syeda Mania Musa, student ID 98996625. MSc Project Management, Ravensbourne University London. PRM25706 Advanced Project Operations, Procurement and Governance, Assessment 3. Project RESOLVE is a module case study; figures come from the module data packs.</div></footer>
+
+<script>
+(function(){
+ var tabs=[].slice.call(document.querySelectorAll('nav.tabs button'));
+ function show(n,scroll){
+  n=String(n);
+  document.querySelectorAll('section.page').forEach(function(s){s.classList.toggle('active',s.id==='p'+n)});
+  tabs.forEach(function(t){var on=t.dataset.p===n;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on&&t.scrollIntoView)t.scrollIntoView({block:'nearest',inline:'nearest'})});
+  try{history.replaceState(null,'','#p'+n)}catch(e){}
+  if(scroll)window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+ }
+ tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.p,true)});
+  t.addEventListener('keydown',function(e){var i=tabs.indexOf(t);if(e.key==='ArrowRight'){tabs[(i+1)%tabs.length].focus();tabs[(i+1)%tabs.length].click()}if(e.key==='ArrowLeft'){tabs[(i+5)%tabs.length].focus();tabs[(i+5)%tabs.length].click()}})});
+ document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();show(b.dataset.go,true)})});
+ var m=(location.hash||'').match(/^#p([1-6])$/);show(m?m[1]:'1',false);
+})();
+</script>
+</body>
+</html>
